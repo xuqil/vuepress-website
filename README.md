@@ -1,16 +1,16 @@
 # xuqilong.top博客源码
 
 DEV:
-- `yarn`
-- `yarn dev`
+- `yarn` or `npm install`
+- `yarn dev` or `npm run dev`
 
 BUILD:
-- `yarn`
-- `yarn build`
+- `yarn` or `npm install`
+- `yarn build` or `npm run build`
 
 部署：
-- Linux: `yarn deploy`
-- wind: 打开git窗口，执行`yarn deploy`
+- Linux: `yarn deploy` or `npm run deploy`
+- wind: 打开git窗口，执行`yarn deploy` or `npm run deploy`
 
 centos自动化部署
 
