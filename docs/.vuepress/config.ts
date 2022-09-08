@@ -159,7 +159,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     footer: {
       createYear: 2018, // 博客创建年份
       copyrightInfo:
-        'FeelingLife | <a href="https://beian.miit.gov.cn" target="_blank">粤ICP备19034953号-1</a>', // 博客版权信息，支持a标签或换行标签</br>
+        'FeelingLife | <a href="https://beian.miit.gov.cn" target="_blank">粤ICP备2022093535号-1</a>', // 博客版权信息，支持a标签或换行标签</br>
     },
 
     // 自定义hmtl(广告)模块
@@ -179,6 +179,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // ['meta', { name: 'baidu-site-verification', content: 'code-ZaU5xuh72v' }], // 百度统计的站长验证www.xuqilong.top
     ['meta', { name: 'baidu-site-verification', content: 'code-yFfTOjuOC1' }], // 百度统计的站长验证xuqilong.top
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
+    ['meta', { name: '360-site-verification', content: '9214449e4b771749f2e9548780151b14' }], // 360统计
+    ['meta', { name: 'msvalidate.01', content: '48F248A46B020B280094160C7301C568' }], // bing统计
     [  // 添加百度统计
       "script",
       {},
@@ -217,7 +219,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     [
       '@vuepress/google-analytics', //谷歌分析
       {
-        'ga': 'UA-179094677-1' // UA-00000000-0
+        'ga': 'G-GQJF7H7P7Y' // UA-00000000-0
       }
     ],
     [
