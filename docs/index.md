@@ -1,7 +1,7 @@
 ---
 home: true
 # heroImage: /img/web.png
-heroText: 程序员 Life
+heroText: FeelingLife
 tagline: 让远航的帆，铺满暖心的海！
 # actionText: 立刻进入 →
 # actionLink: /web/

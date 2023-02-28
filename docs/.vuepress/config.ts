@@ -14,7 +14,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: "FeelingLife",
+      title: "我的学习日志",
       description: '健康快乐地学习！让远航的帆，铺满暖心的海！',
     }
   },
