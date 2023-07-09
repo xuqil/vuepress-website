@@ -77,11 +77,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
-        text: 'Kubernetes',
+        text: '云原生',
         link: '/k8s/',
         items: [
           { text: 'Docker', link: '/k8s/docker/' },
           { text: 'Kubernetes', link: '/k8s/kubernetes/' },
+          { text: 'Observability', link: '/k8s/Observability/' },
+          { text: '容器底层', link: '/k8s/core/' },
         ],
       },
       {
