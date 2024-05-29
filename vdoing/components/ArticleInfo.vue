@@ -58,17 +58,13 @@
             >{{ item + ' ' }}</router-link
           >
         </div>
-        <PageInfo style="margin-left: 0" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import PageInfo from './PageInfo.vue';
-
 export default {
-  components: { PageInfo },
   data() {
     return {
       date: '',

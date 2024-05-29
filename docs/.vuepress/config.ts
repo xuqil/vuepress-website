@@ -188,6 +188,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       copyrightInfo:
         'FeelingLife | <a href="https://beian.miit.gov.cn" target="_blank">粤ICP备2022093535号-1</a>', // 博客版权信息，支持a标签或换行标签</br>
     },
+    // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
+    extendFrontmatter: {
+      author: {
+        name: 'xuqil',
+        link: 'https://github.com/xuqil'
+      }
+    },
 
     // 自定义hmtl(广告)模块
     htmlModules
@@ -234,6 +241,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 插件配置
   plugins: <UserPlugins>[
+    [
+      'vuepress-plugin-mathjax',
+      {
+        macros: {
+          '\\Z': '\\mathbb{Z}',
+        },
+      },
+    ],
     'vuepress-plugin-baidu-autopush', // 百度自动推送
 
     [
@@ -321,7 +336,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   ],
 
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
+    extractHeaders: ['h2', 'h3', 'h4', 'h5'], // 提取标题到侧边栏的级别，默认['h2', 'h3']
   },
 
   // 监听文件变化并重新构建

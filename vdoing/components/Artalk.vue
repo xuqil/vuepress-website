@@ -18,6 +18,7 @@ export default {
   },
   methods: {
     initArtalk() {
+      const that = this
       const ArtalkComponent = () => ({
         component: import("artalk"),
       });
@@ -27,8 +28,8 @@ export default {
 
         new Artalk({
           el: "#Comments",
-          pageKey: "", // 页面链接
-          pageTitle: "", // 页面标题
+          pageKey: that.$route.path, // 页面链接
+          pageTitle: `${document.title}`, // 页面标题
           server: "https://talk.xuqilong.top", // 后端地址
           site: "程序员 Life",
         });
