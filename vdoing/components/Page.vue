@@ -27,7 +27,7 @@
 
           <Content class="theme-vdoing-content" />
           <!-- 自定义评论 -->
-          <Artalk />
+          <!-- <Artalk /> -->
         </div>
         <slot name="bottom" v-if="isShowSlotB" />
         <PageEdit />
