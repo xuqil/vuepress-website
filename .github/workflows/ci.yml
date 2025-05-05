@@ -1,0 +1,52 @@
+name: Deploy to Tencent COS
+
+on:
+  push:
+    branches: [ main ]  # 触发分支（按需修改）
+  workflow_dispatch:    # 允许手动触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 检出代码
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '10.x'
+          cache: 'npm'
+
+      # 3. 安装依赖
+      - name: Install Dependencies
+        run: npm install
+
+      # 4. 构建项目
+      - name: Build VuePress
+        run: npm run build
+
+      # 5. 设置 Python 环境（coscmd 依赖）
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # 6. 安装腾讯云 CLI 工具
+      - name: Install COSCMD
+        run: pip install coscmd
+
+      # 7. 配置 COS 认证
+      - name: Configure COS
+        run: |
+          coscmd config -a ${{ secrets.TENCENT_SECRET_ID }} \
+                        -s ${{ secrets.TENCENT_SECRET_KEY }} \
+                        -b ${{ secrets.COS_BUCKET }} \
+                        -r ${{ secrets.COS_REGION }}
+
+      # 8. 上传到 COS（带增量更新）
+      - name: Upload to COS
+        run: |
+          coscmd upload -r --delete -f docs/.vuepress/dist/ /
